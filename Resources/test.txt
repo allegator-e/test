@@ -1,0 +1,122 @@
+Каков результат вызова метода work()?
+
+private void work() {
+	try {
+		work();
+	} finally {
+		work();
+	}
+}
+
+а)StackOverflowError
+б)NullPointerException
+в)Зависнет
+г)Успешно завершится
+####
+Что напечатает этот код?
+
+List<Integer> elements = new ArrayList<>();
+elements.add(10);
+int elem = elements.get(1);
+System.out.println(elem);
+
+а)null
+б)10
+в)0
+г)IndexOutOfBoundsException
+####
+Каков результат выполнения кода?
+
+char ch = '0';
+ch *= 1.1;
+System.out.println(ch);
+
+а)RuntimeError
+б)Выведет 5
+в)Выведет 4
+г)Выведет 0
+####
+Что напечатает следующий код?
+
+System.out.print(0.1 * 2 == 0.2);
+System.out.print(0.1 * 3 == 0.3);
+
+
+а)truefalse
+б)falsefalse
+в)falsetrue
+г)truetrue
+####
+Корректно ли такое выражение?
+
+List<Number> nums = new ArrayList<Integer>();
+
+а)Да
+б)Нет, будет ошибка компиляции
+в)Нет, будет ошибка во время выполнения
+г)Да кто его знает
+####
+Как можно в коде вычислить квадратный корень из числа
+без использования функции извлечения корня?
+Для упрощения задачи будем считать, что корень – это всегда целое число.
+Какое самое оптимальное решение?
+
+а)Полный перебор всех вариантов
+б)Двоичный поиск
+в)Нельзя вычислить корень без использования функции извлечения корня
+г)У другого программиста спросите
+####
+Если в Java в ArrayList и в LinkedList начать в бесконечном цикле добавлять по одному элементу,
+то в какой из коллекций окажется больше элементов на момент возникновения OutOfMemoryError?
+
+а)ArrayList
+б)LinkedList
+в)Скорее всего в LinkedList, но иногда может и в ArrayList
+г)Скорее всего в ArrayList, но иногда может и в LinkedList
+####
+Что произойдет после вызова метода test()?
+
+interface I { void print(); }
+public I create() {
+   return () -> { System.out.println("Hello!"); };
+}
+private I i = this::create;
+public void test() {
+   i.print();
+}
+а)Не скомпилируется
+б)В консоль выведется «Hello!»
+в)Ничего не будет напечатано
+г)Исключение в рантайме
+####
+Каким будет результат выполнения кода:
+
+List list = new ArrayList<>();
+list.add("One");
+list.add("Two");
+list.add("Three");
+
+list.stream().forEach(s -> {
+   System.out.println(s);
+   list.add(s + "New");
+});
+а)Не скомпилируется
+б)One + Исключение
+в)One Two Three + Исключение
+г)Зациклится
+####
+Каким будет результат выполнения кода:
+
+String[] names = {"Java", "Kotlin", "Java"};
+String name = "Java";
+Predicate predicate = name::equals;
+Stream.of(names).filter(predicate).count();
+name = "Kotlin";
+Stream.of(names).filter(predicate).count();
+
+а)Не скомпилируется
+б)2 1
+в)2 + Исключение
+г)2 2
+####
+в#г#в#а#б#б#в#в#в#г
